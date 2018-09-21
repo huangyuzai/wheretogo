@@ -112,7 +112,7 @@ export default {
                 .icons-img
                     width: 1rem
             .icons-title
-                color: $iconsTitleColor
+                color: $Color-212121
                 ellipsis()
         .swiper-pagination
             bottom: .15rem
