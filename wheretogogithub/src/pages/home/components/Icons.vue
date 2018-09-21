@@ -102,8 +102,7 @@ export default {
         .icons
             float: left
             width: 25%
-            height: 0
-            padding-bottom: 25%
+            height: 1.5rem
             text-align: center
             .icons-img-box
                 width: 100%
@@ -111,10 +110,10 @@ export default {
                 padding: .1rem
                 overflow: hidden
                 .icons-img
-                    width: 79%
+                    width: 1rem
             .icons-title
                 color: $iconsTitleColor
                 ellipsis()
         .swiper-pagination
-            bottom: 0
+            bottom: .15rem
 </style>
