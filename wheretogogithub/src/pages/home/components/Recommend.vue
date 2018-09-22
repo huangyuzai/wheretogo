@@ -1,8 +1,8 @@
 <template>
-    <div class="container">
+    <div class="recommend-container">
         <h2 class="recommend-title">热销推荐</h2>
         <ul class="attractions-box">
-            <li class='attractions' v-for='item of attractionsList' :key='item.id'>
+            <li class='attractions' v-for='item of recommendList' :key='item.id'>
                 <img class="attractions-img" :src="item.imgUrl" />
                 <div class="attractions-text">
                     <p class="attractions-title">{{item.title}}</p>
@@ -17,28 +17,12 @@
 <script>
 export default {
     name: 'HomeRecommend',
+    props: {
+        recommendList: Array
+    },
     data() {
         return {
-            attractionsList: [
-                {
-                    id:'01',
-                    title: '锦绣中华民俗村',
-                    desc: '锦绣中华民俗村锦绣中华民俗村锦绣中华民俗村',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg'
-                },
-                {
-                    id:'02',
-                    title: '世界之窗',
-                    desc: '世界之窗世界之窗世界之窗世界之窗',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1809/87/8796d4dfe0366858a3.water.png_200x200_ca6e25bf.png'
-                },
-                {
-                    id:'03',
-                    title: '深圳欢乐谷',
-                    desc: '深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1807/99/992c99c98928c509a3.water.jpg_200x200_fc4df6ea.jpg'
-                }
-            ]
+
         }
     }
 }
@@ -47,7 +31,7 @@ export default {
 <style lang='stylus' scoped>
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
-    .container
+    .recommend-container
         .recommend-title
             titleStyle()
         .attractions-box
@@ -55,7 +39,7 @@ export default {
                 display: flex
                 padding: .2rem 0
                 margin-left: .24rem
-                border-bottom: solid 1px $Color-e0e0e0
+                border-bottom: solid 1px $borderColor
                 .attractions-img
                     width: 2rem
                     height: 2rem
@@ -74,7 +58,8 @@ export default {
                         line-height: .5rem
                         margin: .05rem 0
                         font-size: .24rem
-                        color: $Color-616161
+                        color: #616161
+                        padding-right: .2rem
                         ellipsis()
                     .attractions-details
                         padding: .05rem .3rem
