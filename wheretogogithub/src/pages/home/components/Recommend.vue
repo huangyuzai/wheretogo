@@ -49,17 +49,13 @@ export default {
 @import '~styles/mixins.styl'
     .container
         .recommend-title
-            height: .8rem
-            line-height: .8rem
-            padding-left: .26rem
-            background: #f5f5f5
-            color: $Color-212121
+            titleStyle()
         .attractions-box
             .attractions
                 display: flex
                 padding: .2rem 0
                 margin-left: .24rem
-                border-bottom: solid 1px #e0e0e0
+                border-bottom: solid 1px $Color-e0e0e0
                 .attractions-img
                     width: 2rem
                     height: 2rem
@@ -78,7 +74,7 @@ export default {
                         line-height: .5rem
                         margin: .05rem 0
                         font-size: .24rem
-                        color: #616161
+                        color: $Color-616161
                         ellipsis()
                     .attractions-details
                         padding: .05rem .3rem
