@@ -12,31 +12,25 @@
             <div class="popular-cities listModule">
                 <h2 class="title">热门城市</h2>
                 <ul class="list-container">
-                    <li class='list-one'>
-                        <div class="city-title">深圳</div>
-                    </li>
-                    <li class='list-one'>
-                        <div class="city-title">广州</div>
-                    </li>
-                    <li class='list-one'>
-                        <div class="city-title">上海</div>
-                    </li>
-                    <li class='list-one'>
-                        <div class="city-title">北京</div>
+                    <li class='list-one'
+                        v-for='item of hotCities'
+                        :key='item.id'
+                    >
+                        <div class="city-title">{{item.name}}</div>
                     </li>
                 </ul>
             </div>
-            <div class="letters-list listModule">
-                <h2 class="title">A</h2>
+            <div class="letters-list listModule"
+                 v-for='(item,key) of cities'
+                 :key='key'
+            >
+                <h2 class="title">{{key}}</h2>
                 <ul class="list-container">
-                    <li class='list-one'>
-                        <div class="city-title">阿拉尔</div>
-                    </li>
-                    <li class='list-one'>
-                        <div class="city-title">阿拉尔</div>
-                    </li>
-                    <li class='list-one'>
-                        <div class="city-title">阿拉尔</div>
+                    <li class='list-one'
+                    v-for='citiesItem of item'
+                    :key='citiesItem.id'
+                    >
+                        <div class="city-title">{{citiesItem.name}}</div>
                     </li>
                 </ul>
             </div>
@@ -48,6 +42,10 @@
     import Bscroll from 'better-scroll'
 export default {
     name: 'CityList',
+    props: {
+        hotCities: Array,
+        cities: Object
+    },
     mounted () {
         this.scroll = new Bscroll(this.$refs.wrapper)
     }

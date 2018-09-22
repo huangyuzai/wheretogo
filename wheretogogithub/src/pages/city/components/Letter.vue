@@ -1,18 +1,22 @@
 <template>
     <div class="letter">
         <ul class="letter-box">
-            <li class="letter-list">A</li>
-            <li class="letter-list">A</li>
-            <li class="letter-list">A</li>
-            <li class="letter-list">A</li>
-            <li class="letter-list">A</li>
+            <li class="letter-list"
+                v-for='(item,key) of cities'
+                :key='key'
+            >
+            {{key}}
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'CityLetter'
+    name: 'CityLetter',
+    props: {
+        cities: Object
+    }
 }
 </script>
 
