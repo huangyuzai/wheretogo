@@ -16,6 +16,7 @@
                 <li class="content-title"
                     v-for='item of list'
                     :key='item.id'
+                    @click='cityClick(item.name)'
                 >
                 {{item.name}}</li>
                 <li class="content-title noData"
@@ -38,6 +39,12 @@ export default {
             keyWord: '',
             list: [],
             timer: null
+        }
+    },
+    methods: {
+        cityClick (city) {
+            this.$store.dispatch('changeCity',city)
+            this.$router.push('/')
         }
     },
     computed: {

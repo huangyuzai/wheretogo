@@ -8,8 +8,8 @@
        输入城市/景点/游玩主题</div>
       <router-link to='/city'>
         <div class="header-right">
-         {{city}}
-          <span class="iconfont city-icon">&#xe64a;</span>
+         {{this.$store.state.city}}
+          <span class="iconfont city-icon">&#xe6aa;</span>
         </div>
       </router-link>
   </div>
@@ -49,7 +49,7 @@ export default {
      .header-right
         color: white
         float: right
-        width: 1.28rem
+        padding: 0 .21rem
         text-align: center
         .city-icon
            font-size: 12px

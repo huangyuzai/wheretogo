@@ -5,7 +5,7 @@
                 <h2 class="title">当前位置</h2>
                 <ul class="list-container">
                     <li class='list-one'>
-                        <div class="city-title">深圳</div>
+                        <div class="city-title">{{this.$store.state.city}}</div>
                     </li>
                 </ul>
             </div>
@@ -15,6 +15,7 @@
                     <li class='list-one'
                         v-for='item of hotCities'
                         :key='item.id'
+                        @click='cityClick(item.name)'
                     >
                         <div class="city-title">{{item.name}}</div>
                     </li>
@@ -30,6 +31,7 @@
                     <li class='list-one'
                     v-for='citiesItem of item'
                     :key='citiesItem.id'
+                    @click='cityClick(citiesItem.name)'
                     >
                         <div class="city-title">{{citiesItem.name}}</div>
                     </li>
@@ -40,13 +42,19 @@
 </template>
 
 <script>
-    import Bscroll from 'better-scroll'
+import Bscroll from 'better-scroll'
 export default {
     name: 'CityList',
     props: {
         hotCities: Array,
         cities: Object,
         letter: String
+    },
+    methods: {
+        cityClick (city) {
+            this.$store.dispatch('changeCity',city)
+            this.$router.push('/')
+        }
     },
     mounted () {
         this.scroll = new Bscroll(this.$refs.wrapper)

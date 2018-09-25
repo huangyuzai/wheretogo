@@ -2,14 +2,19 @@
     <div class="recommend-container">
         <h2 class="recommend-title">热销推荐</h2>
         <ul class="attractions-box">
-            <li class='attractions' v-for='item of recommendList' :key='item.id'>
+            <router-link class='attractions'
+                v-for='item of recommendList'
+                :key='item.id'
+                tag='li'
+                :to='"/detail/" + item.id'
+            >
                 <img class="attractions-img" :src="item.imgUrl" />
                 <div class="attractions-text">
                     <p class="attractions-title">{{item.title}}</p>
                     <p class="attractions-desc">{{item.desc}}</p>
                     <button class="attractions-details">查看详情</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
