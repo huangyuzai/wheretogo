@@ -1,3 +1,3 @@
 # wheretogo
 
-## hello world my vue producy
+## hello! my product
