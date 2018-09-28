@@ -6,7 +6,8 @@
 
 <script>
 import DetailBanner from './components/Banner'
- export default {
+
+export default {
     name: 'Detail',
     components: {
         DetailBanner
