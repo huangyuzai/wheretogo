@@ -4,7 +4,7 @@
             <div class="bannerImgBox">
                 <img class="bannerImg" src="//img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_600x330_18d5b736.jpg"/>
                 <div class="titleBox">
-                    <p class="bannerTitle">锦绣中华村(AAAAA景区)</p>
+                    <p class="bannerTitle">锦绣中华民俗村(AAAAA景区)</p>
                     <span class="iconfont imgNum">&#xe66b;&nbsp;&nbsp;{{imgs.length}}</span>
                 </div>
             </div>
