@@ -38,7 +38,7 @@ export default {
     methods: {
         scrollMethod () {
             const top = document.documentElement.scrollTop
-            if (top > 0) {
+            if (top > 10) {
                 let opacity = top / 140
                 opacity = opacity > 1 ? 1 : opacity
                 this.showAbs = false
@@ -51,7 +51,12 @@ export default {
         }
     },
     mounted () {
-        window.addEventListener('scroll',this.scrollMethod,true)
+        let that = this
+        window.addEventListener('scroll',that.scrollMethod,true)
+    },
+    destroyed () {
+        let that = this
+        window.removeEventListener('scroll',that.scrollMethod,true)
     }
 }
 </script>
@@ -82,6 +87,7 @@ export default {
         width: 100%
         top: 0
         left: 0
+        z-index: 9
         .header--fixed
             position: absolute
             left: .26rem

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="banner" @click='galleryBtn'>
+        <div class="banner" id="banner" @click='galleryBtn'>
             <div class="bannerImgBox">
                 <img class="bannerImg" src="//img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_600x330_18d5b736.jpg"/>
                 <div class="titleBox">
