@@ -2,10 +2,10 @@
     <div>
         <div class="banner" id="banner" @click='galleryBtn'>
             <div class="bannerImgBox">
-                <img class="bannerImg" src="//img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_600x330_18d5b736.jpg"/>
+                <img class="bannerImg" :src="this.bannerImg"/>
                 <div class="titleBox">
-                    <p class="bannerTitle">锦绣中华民俗村(AAAAA景区)</p>
-                    <span class="iconfont imgNum">&#xe66b;&nbsp;&nbsp;{{imgs.length}}</span>
+                    <p class="bannerTitle">{{this.title}}{{this.grade}}</p>
+                    <span class="iconfont imgNum">&#xe66b;&nbsp;&nbsp;{{this.galleryImgs.length}}</span>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
         >
             <module-gallery
                 @galleryHide='galleryHide'
-                :imgs='imgs'
+                :galleryImgs='this.galleryImgs'
             ></module-gallery>
         </div>
     </div>
@@ -25,17 +25,15 @@ import ModuleGallery from 'module/gallery/Gallery'
 
 export default {
     name: 'DetailBanner',
+    props: {
+        title: String,
+        grade: String,
+        bannerImg: String,
+        galleryImgs: Array
+    },
     data () {
         return {
-            isGallery: false,
-            imgs: [
-            'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_350x240_bda2a037.jpg',
-            'http://img1.qunarzz.com/sight/p0/1701/46/46348d2b494ac227a3.water.jpg_350x240_2c4e8c61.jpg',
-            'http://img1.qunarzz.com/sight/p0/1601/da/da957ca1602bdc9190.water.jpg_350x240_ef614bd3.jpg',
-            'http://img1.qunarzz.com/sight/p0/1601/19/1993fb00037a3ffd90.water.jpg_350x240_61a2616f.jpg',
-            'http://img1.qunarzz.com/sight/p0/1601/2c/2c34835cb1432a2890.water.jpg_350x240_08f08899.jpg',
-            'http://img1.qunarzz.com/sight/p0/1601/8f/8f4871e82d670ece90.water.jpg_350x240_7340e7f5.jpg'
-            ]
+            isGallery: false
         }
     },
     components: {

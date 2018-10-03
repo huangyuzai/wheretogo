@@ -2,7 +2,7 @@
     <div class='gallery'>
         <div class='wrapper'>
             <swiper :options='swiperOption'>
-                <swiper-slide v-for='(item,index) of imgs'
+                <swiper-slide v-for='(item,index) of galleryImgs'
                               :key='index'
                 >
                     <img class='gallery-img'
@@ -20,7 +20,7 @@
 export default {
     name: 'ModuleGallery',
     props: {
-        imgs: {
+        galleryImgs: {
             type: Array,
             default () {
                 return []

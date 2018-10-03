@@ -1,7 +1,14 @@
 <template>
     <div class="DetailBanner">
-        <detail-banner></detail-banner>
-        <detail-header></detail-header>
+        <detail-banner
+            :title='title'
+            :grade='grade'
+            :bannerImg='bannerImg'
+            :galleryImgs='galleryImgs'
+        ></detail-banner>
+        <detail-header
+            :title='title'
+        ></detail-header>
         <detail-list :ticketList='ticketList'></detail-list>
     </div>
 </template>
@@ -16,6 +23,10 @@ export default {
     name: 'Detail',
     data () {
         return {
+            title: '',
+            grade: '',
+            bannerImg: '',
+            galleryImgs: [],
             ticketList: []
         }
     },
@@ -26,13 +37,22 @@ export default {
     },
     methods: {
         getTicketData () {
-            axios.get('/api/ticket.json')
+            axios.get('/api/detail.json',{
+                params: {
+                    id: this.$route.params.id
+                }
+            })
             .then(this.getTickerSucc)
         },
         getTickerSucc (res) {
             var res = res.data
             if(res.ret && res.data) {
-                this.ticketList = res.data.ticketList
+                const data = res.data
+                this.title = data.title
+                this.grade = data.grade
+                this.bannerImg = data.bannerImg
+                this.galleryImgs = data.galleryImgs
+                this.ticketList = data.ticketList
             }
         }
     },

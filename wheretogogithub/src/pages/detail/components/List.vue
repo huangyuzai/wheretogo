@@ -10,6 +10,7 @@
             </div>
             <div class="ticketList"
                  v-for='(item_1,index) of item.children'
+                 :key='index'
             >
                 <div class="titleBox">
                     {{item_1.title}}

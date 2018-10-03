@@ -19,7 +19,7 @@
             >
                 <span class="iconfont callback">&#xe606;</span>
             </router-link>
-            <h1 class="header-title">锦绣中华民俗村</h1>
+            <h1 class="header-title">{{this.title}}</h1>
         </div>
     </div>
 </template>
@@ -27,6 +27,9 @@
 <script>
 export default {
     name: 'DetailHeader',
+    props: {
+        title: String
+    },
     data () {
         return {
             showAbs: true,
