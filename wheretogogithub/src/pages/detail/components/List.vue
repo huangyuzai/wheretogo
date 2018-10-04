@@ -11,6 +11,7 @@
             <div class="ticketList"
                  v-for='(item_1,index) of item.children'
                  :key='index'
+                 :data-index='index'
             >
                 <div class="titleBox">
                     {{item_1.title}}
@@ -22,6 +23,8 @@
                     递归组件用法
                     <detail-list :ticketList='item.childern'></detail-list> -->
             </div>
+
+            <!-- <div @click='btn'>点击查看更多</div> -->
         </div>
     </div>
 </template>

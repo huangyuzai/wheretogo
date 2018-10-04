@@ -9,19 +9,23 @@
                 </div>
             </div>
         </div>
-        <div class="gallery"
-             v-show='isGallery'
-        >
-            <module-gallery
-                @galleryHide='galleryHide'
-                :galleryImgs='this.galleryImgs'
-            ></module-gallery>
-        </div>
+        <module-animation>
+            <!-- <div class="gallery"
+                 v-show='isGallery'
+            > -->
+                <module-gallery
+                    @galleryHide='galleryHide'
+                    :galleryImgs='this.galleryImgs'
+                    v-show='isGallery'
+                ></module-gallery>
+            <!-- </div> -->
+        </module-animation>
     </div>
 </template>
 
 <script>
 import ModuleGallery from 'module/gallery/Gallery'
+import ModuleAnimation from 'module/fade/Animation'
 
 export default {
     name: 'DetailBanner',
@@ -37,7 +41,8 @@ export default {
         }
     },
     components: {
-        ModuleGallery
+        ModuleGallery,
+        ModuleAnimation
     },
     methods: {
         galleryBtn () {
