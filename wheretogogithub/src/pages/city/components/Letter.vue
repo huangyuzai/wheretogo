@@ -5,7 +5,7 @@
                 v-for='item of letters'
                 :key='item'
                 :ref='item'
-                @touchstart='touchstart'
+                @touchstart.prevent='touchstart'
                 @touchmove='touchmove'
                 @touchend='touchend'
                 @click='letterClick'
@@ -29,17 +29,19 @@ export default {
             timer: null
         }
     },
-    updated () {
+    /*updated () {
         this.startY = this.$refs['A'][0].offsetTop
-    },
+    },*/
     methods: {
         letterClick (e) {
+            console.log(e)
             this.$emit('change',e.target.innerText)
         },
         touchstart () {
             this.touchstatus = true
         },
         touchmove (e) {
+            this.startY = this.$refs['A'][0].offsetTop
             if(this.touchstatus) {
                 if(this.timer) {
                     clearTimeout(this.timer)

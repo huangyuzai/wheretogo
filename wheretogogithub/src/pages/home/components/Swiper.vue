@@ -26,10 +26,8 @@ export default {
       swiperOption: {
         pagination: '.swiper-pagination',    /*导航点*/
         loop: true,                          /*在第一张到最后一张之间循环*/
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        }
+        autoplay : 5000,
+        autoplayDisableOnInteraction : false, /*用户滑动之后自动切换不会停止*/
       }
     }
   },
