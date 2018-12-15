@@ -1,3 +1,3 @@
 # wheretogo
 
-## hello! my product
+## hello! my project
